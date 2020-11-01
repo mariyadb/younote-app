@@ -11,12 +11,12 @@ app.use(express.json());
 const dbPath = 'mongodb+srv://team_user:teamuser@test-cluster-ekv4m.mongodb.net/'; // Add MongoDB Path HERE.
 
 mongoose.connect(dbPath, {
-    dbName: 'you_note',
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useUnifiedTopology: true
+  dbName: 'you_note',
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useUnifiedTopology: true
 }).then(() => {
-    console.log("Connected to the DB.");
+  console.log("Connected to the DB.");
 }).catch((err) => console.log("Error connecting to the database."));
 
 app.all('/api/*', auth);
